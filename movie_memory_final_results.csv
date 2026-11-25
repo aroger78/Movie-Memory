@@ -1,0 +1,6 @@
+Method,Metric,Score
+BM25 Keyword Search,Hit Rate@5,16.67%
+FAISS Semantic Search,Hit Rate@5,38.89%
+Qwen-Only Baseline,Title Accuracy,16.67%
+RAG Top 5,Title Accuracy,33.33%
+RAG Top 3,Title Accuracy,33.33%
