@@ -1,3 +1,4 @@
+
 # Movie Memory
 
 **AI 301: Natural Language Processing and Conversational AI — Fall 2026**
@@ -57,6 +58,8 @@ An internet connection is required to download the dataset, test cases, and pret
 
 The first run may take some time because the notebook processes 34,886 movie plot summaries and generates answers using Qwen.
 
+No API keys are required.
+
 ### 4. Review the Results
 
 The notebook displays results for:
@@ -67,20 +70,51 @@ The notebook displays results for:
 - RAG with five retrieved plots
 - RAG with three retrieved plots
 
+The notebook also exports individual evaluation results, a consolidated results table, and the final test set as CSV files.
+
 ## Dependencies
 
-The notebook uses Python in Google Colab with the following libraries:
+The project was tested in Google Colab using the following package versions:
 
-- pandas
-- numpy
-- torch
-- transformers
-- sentence-transformers
-- faiss-cpu
-- rank-bm25
-- gdown
+| Package | Version |
+|---|---|
+| pandas | 2.2.3 |
+| numpy | 2.4.6 |
+| torch | 2.14.1+cu130 |
+| transformers | 5.22.1 |
+| sentence-transformers | 5.7.0 |
+| faiss-cpu | 1.16.0 |
+| rank-bm25 | 0.2.2 |
+| gdown | 5.2.2 |
 
-The notebook installs the additional required packages in its setup cells.
+The notebook installs the additional required packages in its setup cells and displays the installed package versions at the end.
+
+These versions document the tested environment. The installation cells do not explicitly pin every package to these versions.
+
+## Model Settings
+
+### Retrieval Settings
+
+| Setting | Value |
+|---|---|
+| Embedding model | thenlper/gte-small |
+| Embedding dimensions | 384 |
+| Embedding normalization | Enabled |
+| FAISS index | IndexFlatIP |
+| Retrieval evaluation | Top 5 |
+| RAG configurations | Top 3 and Top 5 |
+
+### Generation Settings
+
+| Setting | Qwen-Only | RAG |
+|---|---|---|
+| Language model | Qwen2.5-1.5B-Instruct | Qwen2.5-1.5B-Instruct |
+| Maximum new tokens | 100 | 150 |
+| Random sampling | Disabled | Disabled |
+| Retrieved plots | None | 3 or 5 |
+| Candidate-title validation | No | Yes |
+
+Random sampling is disabled using `do_sample=False`. No explicit random seed is set. Results may vary across different hardware and software environments.
 
 ## Test Cases
 
@@ -94,6 +128,12 @@ The test cases are available in `movie_memory_20_test_cases.csv`.
 
 The notebook also uses `movie_memory_additional_15_test_cases.csv` from this repository and combines those records with the five original examples. Six cases are then revised to improve decade and genre diversity.
 
+## Evaluation Metrics
+
+- **Hit Rate@5:** The percentage of answerable test cases where the expected movie appears among the five retrieved results.
+- **Title Accuracy:** The percentage of answerable test cases where the model identifies the expected movie title.
+- **Abstention Accuracy:** The percentage of intentionally unanswerable test cases where the model correctly declines to identify a movie.
+
 ## Evaluation Results
 
 | Method | Metric | Result |
@@ -104,13 +144,21 @@ The notebook also uses `movie_memory_additional_15_test_cases.csv` from this rep
 | RAG — Top 5 Plots | Title Accuracy | 33.33% (6/18) |
 | RAG — Top 3 Plots | Title Accuracy | 33.33% (6/18) |
 
-BM25 and semantic search are evaluated using Hit Rate@5, while Qwen and RAG are evaluated using exact movie-title accuracy. These metrics measure different aspects of system performance.
+BM25 and semantic search are evaluated using Hit Rate@5, while Qwen and RAG are evaluated using movie-title accuracy. These metrics measure different aspects of system performance.
+
+### Abstention Results
+
+| Method | Correct Abstentions | Abstention Accuracy |
+|---|---|---|
+| Qwen-Only Baseline | 1/2 | 50.00% |
+| RAG — Top 5 Plots | 0/2 | 0.00% |
+| RAG — Top 3 Plots | 0/2 | 0.00% |
 
 ## Design Experiment
 
-We compared two versions of the RAG system while keeping the embedding model, language model, prompt, and test descriptions the same.
+We compared two versions of the RAG system while keeping the embedding model, language model, prompt structure, and test descriptions the same.
 
-The only change was the number of retrieved movie plots provided to Qwen.
+The only experimental change was the number of retrieved movie plots provided to Qwen.
 
 Both configurations correctly identified 6 of 18 answerable movies, achieving 33.33% accuracy.
 
@@ -125,6 +173,23 @@ Our system has several limitations:
 - Neither RAG configuration correctly rejected the two unanswerable test descriptions.
 - The evaluation uses only 20 test cases, so the results may not represent performance on a larger collection of descriptions.
 - Generated explanations may contain details that are not fully supported by the retrieved movie plots.
+- Movies with identical titles but different release years may complicate title-based evaluation.
+- The Qwen-only and RAG configurations use different prompts and maximum token limits.
+
+## Repository Contents
+
+| File | Description |
+|---|---|
+| AI301_Group1_Final.ipynb | Complete project notebook |
+| README.md | Project documentation and setup instructions |
+| movie_memory_additional_15_test_cases.csv | Additional test cases used by the notebook |
+| movie_memory_20_test_cases.csv | Final test set and answer key |
+| movie_memory_final_results.csv | Consolidated evaluation results |
+| bm25_results.csv | Individual BM25 evaluation results |
+| semantic_results.csv | Individual FAISS evaluation results |
+| qwen_results.csv | Individual Qwen-only evaluation results |
+| rag_top5_results.csv | Individual top-5 RAG evaluation results |
+| rag_top3_results.csv | Individual top-3 RAG evaluation results |
 
 ## Repository
 
@@ -136,3 +201,5 @@ GitHub: https://github.com/aroger78/Movie-Memory
 - Drew Woodard
 - Dylan Welby
 - Lauren Willis
+
+Individual project contributions are documented in the notebook.
