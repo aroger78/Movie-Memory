@@ -4,3 +4,9 @@ FAISS Semantic Search,Hit Rate@5,38.89%
 Qwen-Only Baseline,Title Accuracy,16.67%
 RAG Top 5,Title Accuracy,33.33%
 RAG Top 3,Title Accuracy,33.33%
+Qwen-Only Baseline,Grounding Rate,10.00%
+RAG Top 5,Grounding Rate,52.63%
+RAG Top 3,Grounding Rate,55.00%
+Qwen-Only Baseline,Correct Abstention Rate,50.00%
+RAG Top 5,Correct Abstention Rate,0.00%
+RAG Top 3,Correct Abstention Rate,0.00%

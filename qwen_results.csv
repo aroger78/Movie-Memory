@@ -1,66 +1,66 @@
-Test,Expected Movie,Qwen Response,Correct_Title,Correct_Abstention
+Test,Expected Movie,Qwen Response,Correct_Title,Correct_Abstention,Grounded
 1,Jack and the Beanstalk,"I cannot identify the specific movie based on the given vague description ""The one where the boy sells his cow for some beans."" Without more details or context about the plot, characters, or other elements of the film, I do not have enough information to pinpoint any particular movie. Therefore, my answer is:
 
-I cannot identify the movie.",0,0
+I cannot identify the movie.",0,0,
 2,Alice in Wonderland,"The movie described in the vague description is ""Alice's Adventures in Wonderland"" (1951). 
 
 Explanation:
 - The story involves a girl named Alice who follows a white rabbit down a rabbit hole.
 - She encounters various fantastical creatures and situations throughout her journey.
 - The film was directed by Norman Jewison and stars Bette Davis as the White Rabbit and Judy Garland as Alice.
-- It was released in 1951 and has become an iconic classic of children's films.",0,0
+- It was released in 1951 and has become an iconic classic of children's films.",0,0,0.0
 3,The Truman Show,"The movie described in the vague description is ""The Truman Show"" (1998).
 
 **Explanation:** 
-""The Truman Show"" is an American comedy-drama film directed by Peter Weir. It stars Jim Carrey as Truman Burbank, who lives in a reality TV production set on a remote island off the coast of California. Throughout the film, Truman gradually realizes that he has been living his entire life under constant surveillance by a group of people filming a reality TV series called ""Perry",1,0
+""The Truman Show"" is an American comedy-drama film directed by Peter Weir. It stars Jim Carrey as Truman Burbank, who lives in a reality TV production set on a remote island off the coast of California. Throughout the film, Truman gradually realizes that he has been living his entire life under constant surveillance by a group of people filming a reality TV series called ""Perry",1,0,0.0
 4,The Playhouse,"Based on the vague description provided, it seems like the movie could be ""The Truman Show"" (1998). In this film, Truman Burbank, played by Jim Carrey, lives in a reality TV show set on a massive island off the coast of California. He believes everything around him is real until he discovers that his life has been staged as part of a television program. 
 
-However, without more specific details or context clues, I cannot definitively confirm this is the exact movie",0,0
-5,Unanswerable,"I cannot identify the specific movie based on the vague description provided. The description only mentions watching a movie at the cinema with a friend last year, but it does not provide any details about the plot, actors, or other key elements that would help pinpoint the exact film. Without more specific information, such as names of characters, scenes, or themes, it's impossible to determine which particular movie was being referred to.",0,1
+However, without more specific details or context clues, I cannot definitively confirm this is the exact movie",0,0,0.0
+5,Unanswerable,"I cannot identify the specific movie based on the vague description provided. The description only mentions watching a movie at the cinema with a friend last year, but it does not provide any details about the plot, actors, or other key elements that would help pinpoint the exact film. Without more specific information, such as names of characters, scenes, or themes, it's impossible to determine which particular movie was being referred to.",0,1,
 6,5 Against the House,"I cannot identify the specific movie based on the given vague description alone. The plot summary provided does not uniquely pinpoint any particular film. Therefore, my answer is:
 
-I cannot identify the movie.",0,0
-7,Abbott and Costello Meet the Mummy,"Based on the vague description provided, I can identify the movie ""The Mummy"" (1932). The plot summary matches closely with the classic 1932 film where two American tourists, played by Boris Karloff as the mummy and Bela Lugosi as the priest, find themselves trapped in Egypt after their plane crashes. They discover an ancient tomb filled with treasure but also face danger when they encounter other tomb robbers who want to steal the mummy's heart, which",0,0
+I cannot identify the movie.",0,0,
+7,Abbott and Costello Meet the Mummy,"Based on the vague description provided, I can identify the movie ""The Mummy"" (1932). The plot summary matches closely with the classic 1932 film where two American tourists, played by Boris Karloff as the mummy and Bela Lugosi as the priest, find themselves trapped in Egypt after their plane crashes. They discover an ancient tomb filled with treasure but also face danger when they encounter other tomb robbers who want to steal the mummy's heart, which",0,0,0.0
 8,36 Hours,"I cannot identify the specific movie based on the given vague description alone. The plot summary provided does not uniquely define any particular film. Therefore, I must respond with:
 
-""You cannot identify the movie.""",0,0
+""You cannot identify the movie.""",0,0,
 9,The Matrix,"Based on the vague description provided, ""The Matrix"" fits well with the elements of a computer hacker discovering an alternate reality where the world as perceived through his eyes is not real. The film's plot revolves around a hacker named Neo who discovers he has been living in a simulated reality controlled by machines called the Machines, which have taken over humanity. 
 
 Therefore, the movie title is:
 
 ""The Matrix""
 
-This movie was released in 1999 and stars Keanu Reeves as Neo, played",1,0
+This movie was released in 1999 and stars Keanu Reeves as Neo, played",1,0,1.0
 10,The Agony and the Ecstasy,"I cannot identify the specific movie based on the given vague description alone. The description mentions a famous artist being asked to decorate a large ceiling for a religious leader, which could be related to various films that involve artists working with religious themes or large-scale artistic projects. Without more detailed information about the plot, setting, or key actors, I do not have enough data to pinpoint a particular film. Therefore, my answer is:
 
-I cannot identify the movie.",0,0
+I cannot identify the movie.",0,0,
 11,Blackhat,"I cannot identify the specific movie based on the given vague description alone. The plot summary provided does not uniquely pinpoint any particular film. Therefore, my answer is:
 
-I cannot identify the movie.",0,0
+I cannot identify the movie.",0,0,
 12,Home Alone,"I cannot identify the specific movie based on the given vague description alone. The plot summary provided does not uniquely identify any particular film. Therefore, my response is:
 
-I cannot identify the movie.",0,0
+I cannot identify the movie.",0,0,
 13,Little Accidents,"Based on the vague description provided, I can identify the movie ""The Shining"" (1980). 
 
-""The Shining"" is a horror film directed by Stanley Kubrick that was released in 1980. The plot revolves around a family's stay at an isolated hotel called The Overlook Hotel during Halloween weekend. A young boy named Danny Torrance begins to experience supernatural occurrences while his mother, Wendy, struggles with her grief over the death of their son, Jack. As",0,0
+""The Shining"" is a horror film directed by Stanley Kubrick that was released in 1980. The plot revolves around a family's stay at an isolated hotel called The Overlook Hotel during Halloween weekend. A young boy named Danny Torrance begins to experience supernatural occurrences while his mother, Wendy, struggles with her grief over the death of their son, Jack. As",0,0,0.0
 14,Back to the Future,"Based on the vague description provided, ""A Teenager Travels Into the Past and Accidentally Interferes with His Parents Meeting,"" it sounds like the movie might be ""Back to the Future."" 
 
-In ""Back to the Future,"" Marty McFly (played by Michael J. Fox) travels back in time using a DeLorean car invented by his father, who was an inventor. He ends up interfering with his parents' first meeting when he returns to 1955 instead of",1,0
-15,The Incredibles,"Based on the vague description provided, I can identify the movie ""Guardians of the Galaxy."" The plot summary matches well with the concept of a family discovering they have special abilities (likely related to space travel or alien encounters) and working together against an evil force. The Guardians of the Galaxy franchise features a diverse group of characters who use their unique skills to protect Earth from threats posed by cosmic entities.",0,0
-16,The Dark Knight,"I cannot identify the specific movie based on the vague description provided. The description ""A masked crime fighter faces a criminal who causes chaos and forces difficult choices"" could describe multiple movies with different titles and plot details. Without more specific information about the characters, setting, or genre, I do not have enough data to pinpoint a particular film.",0,0
+In ""Back to the Future,"" Marty McFly (played by Michael J. Fox) travels back in time using a DeLorean car invented by his father, who was an inventor. He ends up interfering with his parents' first meeting when he returns to 1955 instead of",1,0,0.0
+15,The Incredibles,"Based on the vague description provided, I can identify the movie ""Guardians of the Galaxy."" The plot summary matches well with the concept of a family discovering they have special abilities (likely related to space travel or alien encounters) and working together against an evil force. The Guardians of the Galaxy franchise features a diverse group of characters who use their unique skills to protect Earth from threats posed by cosmic entities.",0,0,0.0
+16,The Dark Knight,"I cannot identify the specific movie based on the vague description provided. The description ""A masked crime fighter faces a criminal who causes chaos and forces difficult choices"" could describe multiple movies with different titles and plot details. Without more specific information about the characters, setting, or genre, I do not have enough data to pinpoint a particular film.",0,0,
 17,WALL-E,"I cannot identify the specific movie based solely on the vague description provided. The description ""A lonely trash-collecting robot on an abandoned Earth meets a visiting robot"" could describe multiple movies that fit this general theme of alienation or loneliness in space settings. Without more detailed information about the plot, characters, or other elements of the film, I do not have enough data to pinpoint a particular movie title. Therefore, my answer is:
 
-I cannot identify the movie.",0,0
+I cannot identify the movie.",0,0,
 18,Groundhog Day,"I cannot identify the specific movie based solely on the given vague description. The description ""A man reporting on a small-town holiday keeps waking up to the exact same day"" could describe several movies that fit this general theme of repetitive or cyclical narratives involving time travel or alternate realities. Without more specific details about the plot, setting, or characters, I do not have enough information to pinpoint a particular film. Therefore, my answer is:
 
-I cannot identify the movie.",0,0
+I cannot identify the movie.",0,0,
 19,The Princess Bride,"Based on the vague description provided, I can identify the movie as ""The Sound of Music."" 
 
 Explanation:
 - The film features a farmhand (played by Christopher Plummer) who sets out to reunite with his love interest.
 - It also includes a grandfather reading an adventure story to a child, which aligns with the concept of a grandparent telling stories to their grandchildren in the classic 1965 musical adaptation of the book ""The Sound of Music.""
 
-Therefore, the movie title",0,0
+Therefore, the movie title",0,0,0.0
 20,Unanswerable,"Based on the vague description provided, it's difficult to pinpoint an exact movie title without more specific details or context clues. However, given that your cousin mentioned something about forgetting what was said, one possible interpretation could be related to a scene where someone forgets what they were supposed to tell another person. This type of plot element can occur in various genres such as comedy, drama, or thriller films.
 
-One example that fits this description is ""The Big Lebowski,"" directed by Joel and Ethan Co",0,0
+One example that fits this description is ""The Big Lebowski,"" directed by Joel and Ethan Co",0,0,0.0
