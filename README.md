@@ -1,4 +1,3 @@
-
 # Movie Memory
 
 **AI 301: Natural Language Processing and Conversational AI — Fall 2026**
@@ -133,6 +132,17 @@ The notebook also uses `movie_memory_additional_15_test_cases.csv` from this rep
 - **Hit Rate@5:** The percentage of answerable test cases where the expected movie appears among the five retrieved results.
 - **Title Accuracy:** The percentage of answerable test cases where the model identifies the expected movie title.
 - **Abstention Accuracy:** The percentage of intentionally unanswerable test cases where the model correctly declines to identify a movie.
+- **Grounding Rate:** The percentage of non-abstaining responses whose explanations are factually supported by the reference movie plots for Qwen-only or the retrieved movie plots for RAG.
+
+Grounding scores are recorded using the following values:
+
+- `1`: The factual claims in the explanation are supported by the relevant plot information.
+- `0`: The explanation contains unsupported or incorrect factual claims.
+- `None`: The model abstained from identifying a movie.
+
+Abstaining responses are excluded from the grounding rate calculation. Grounding is evaluated separately from title accuracy.
+
+The recorded grounding scores correspond to the saved model responses. If generated responses change when the notebook is rerun, the grounding scores must be reevaluated.
 
 ## Evaluation Results
 
@@ -154,15 +164,30 @@ BM25 and semantic search are evaluated using Hit Rate@5, while Qwen and RAG are 
 | RAG — Top 5 Plots | 0/2 | 0.00% |
 | RAG — Top 3 Plots | 0/2 | 0.00% |
 
+### Grounding Results
+
+| Method | Grounded Explanations | Grounding Rate |
+|---|---|---|
+| Qwen-Only Baseline | 1/10 | 10.00% |
+| RAG — Top 5 Plots | 10/19 | 52.63% |
+| RAG — Top 3 Plots | 11/20 | 55.00% |
+
+The complete evaluation results are available in `movie_memory_final_results.csv`. Individual responses and evaluation scores are available in the corresponding results files.
+
 ## Design Experiment
 
 We compared two versions of the RAG system while keeping the embedding model, language model, prompt structure, and test descriptions the same.
 
 The only experimental change was the number of retrieved movie plots provided to Qwen.
 
+| Configuration | Title Accuracy | Grounding Rate | Abstention Accuracy |
+|---|---|---|---|
+| RAG — Top 5 Plots | 33.33% | 52.63% | 0.00% |
+| RAG — Top 3 Plots | 33.33% | 55.00% | 0.00% |
+
 Both configurations correctly identified 6 of 18 answerable movies, achieving 33.33% accuracy.
 
-This suggests that reducing the number of retrieved plots from five to three did not improve overall accuracy on our test set.
+This suggests that reducing the number of retrieved plots from five to three did not improve overall title accuracy on our test set.
 
 ## Limitations
 
@@ -175,6 +200,7 @@ Our system has several limitations:
 - Generated explanations may contain details that are not fully supported by the retrieved movie plots.
 - Movies with identical titles but different release years may complicate title-based evaluation.
 - The Qwen-only and RAG configurations use different prompts and maximum token limits.
+- Grounding evaluation involves judgment when determining whether factual claims are supported by the available plot information.
 
 ## Repository Contents
 
